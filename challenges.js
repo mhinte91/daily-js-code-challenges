@@ -59,7 +59,17 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-
+const addTwoNumbers = function(num1, num2)
+{
+  if isNaN(num1) || isNaN(num2)
+  {
+    return "NaN";
+  }
+  else
+  {
+    return num1 + num2;
+  }
+}
 
 
 
