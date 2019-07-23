@@ -61,9 +61,9 @@ addTwoNumbers('Hello', 5) //=> NaN
 
 const addTwoNumbers = function(num1, num2)
 {
-  if isNaN(num1) || isNaN(num2)
+  if (isNaN(num1) || isNaN(num2))
   {
-    return "NaN";
+    return NaN;
   }
   else
   {
