@@ -92,7 +92,16 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
+function sumNumbers(arrayToAdd) {
+let total = 0;
+  arrayToAdd.forEach(function(array) {
+    total += array;
+});
+return total;
+}
 
+var array = [5,1,1];
+console.log(sumNumbers(array));
 
 
 
