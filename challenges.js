@@ -100,7 +100,6 @@ let total = 0;
 return total;
 }
 
-var array = [5,1,1];
 console.log(sumNumbers(array));
 
 
@@ -124,6 +123,13 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
+function addList() {
+  var sum = 0;
+  for (var i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+  }
 
 
 
@@ -148,7 +154,13 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-
+function computeRemainder(num1, num2) {
+  if(num2 > 0) {
+    return num1 % num2;
+  } else {
+    return Infinity;
+  }
+}
 
 
 
