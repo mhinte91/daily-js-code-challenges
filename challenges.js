@@ -239,13 +239,15 @@ Prompt:
 
 Examples:
 
-removeEnds('SEI Rocks!'); //=> "DI Rocks"
+removeEnds('SEI Rocks!'); //=> "E`I Rocks"
 removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
 
-
+function removeEnds(str){
+  return str.length < 3 ? '' : str.substring(1, str.length - 1);
+}
 
 
 /*-----------------------------------------------------------------
@@ -268,7 +270,16 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 // Your solution for 09-charCount here:
 
 
+function charCount(str){
+let obj = {};
+let arry = str.split('');
 
+arry.forEach(character => {
+  obj[character] ? obj[character]++ : obj[character] = 1;
+})
+
+return obj;
+}
 
 
 /*-----------------------------------------------------------------
