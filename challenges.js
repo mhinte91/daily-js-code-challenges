@@ -79,7 +79,11 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-
+function sumNumbers(array) {
+  let sum = 0;
+  array.forEach(idx => (sum += idx));
+  return sum;
+}
 
 /*-----------------------------------------------------------------
 Challenge: 04-addList
@@ -99,9 +103,11 @@ add(1,50,1.23) //=> 52.23
 add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
-
-
-
+function addList(...arguments) {
+  let sum = 0;
+  arguments.forEach(idx => (sum += idx));
+  return sum;
+}
 /*-----------------------------------------------------------------
 Challenge: 05-computeRemainder
 
@@ -121,8 +127,6 @@ computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
-
-
 
 /*-----------------------------------------------------------------
 Challenge: 06-range
@@ -150,7 +154,6 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
-
 /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
 
@@ -169,7 +172,6 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
-
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
 
@@ -186,8 +188,6 @@ removeEnds('SEI Rocks!'); //=> "E`I Rocks"
 removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
-
-
 
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
@@ -207,7 +207,6 @@ charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
 charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
-
 
 /*-----------------------------------------------------------------
 Challenge: 10-formatWithPadding
@@ -230,8 +229,6 @@ formatWithPadding(42, '*', 10); //=> "********42"
 formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
-
-
 
 /*-----------------------------------------------------------------
 Challenge: 11-isPalindrome
@@ -300,8 +297,6 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-
-
 /*-----------------------------------------------------------------
 Challenge: 14-fromPairs
 
@@ -319,7 +314,6 @@ fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) //=> { a: 1, b: 2, c: 3 }
 fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sally", age: 24 }
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
-
 
 /*-----------------------------------------------------------------
 Challenge: 15-mergeObjects
@@ -341,7 +335,6 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4});  //=> {a: 1, b: 2, c: 3, d: 4}
 mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c: 3, d: 44}
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
-
 
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
@@ -380,17 +373,6 @@ findHighestPriced([
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
 
-function findHighestPriced(arr) {
-  // 1) setup a reference placeholder for the final resulting object
-  // 2) setup a maxValue reference to compare current last index with current index
-  let result;
-  let maxValue = 0;
-  // 3) loop through array for comparison
-  // 4) use an 'if' statement to make comparison then:
-  //    a) if current index value > maxValue, maxValue = current value
-  //    b) set the reference placeholder to current index object
-
-
 /*-----------------------------------------------------------------
 Challenge: 17-mapArray
 
@@ -426,8 +408,6 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
   Input => [1, 2, 3], function(num) {return num * 2}
   Output => [2, 4, 6]
 */
-
-
 
 /*-----------------------------------------------------------------
 Challenge: 18-reduceArray
@@ -465,13 +445,6 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 //=> {"Yes": 2, "No": 1, "Maybe": 1}
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
-
-function reduceArray(array, callback, accumulator) {
-  array.forEach(function(elem, idx) {
-    accumulator = callback(accumulator, elem, idx);
-  });
-  return accumulator;
-}
 
 // reduceArray accepts three arguments:
 // 1) Array
@@ -512,21 +485,6 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
-function flatten(array) {
-  // Make new array, and push values to new array
-  var flattenedArr = [];
-
-  array.forEach(function(elem) {
-    if (Array.isArray(elem)) {
-      // remove contents and call function again
-      flattenedArr = flattenedArr.concat(flatten(elem));
-    } else {
-      flattenedArr.push(elem);
-    }
-  });
-  return flattenedArr;
-}
-
 /*-----------------------------------------------------------------
 Challenge: 20-isPrime
 
@@ -546,12 +504,6 @@ isPrime(29) //=> true
 isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
-
-function isPrime(n) {
-  for (let i = 2; i < n; i++) {
-    if (n <= 1 || !Number.isInteger(n / i)) return false;
-  }
-}
 
 /*-----------------------------------------------------------------
 Challenge: 21-primeFactors
