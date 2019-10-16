@@ -214,7 +214,17 @@ removeEnds('SEI Rocks!'); //=> "E`I Rocks"
 removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
-
+function removeEnds(string) {
+  array = string.split('');
+  if (array.length < 3) {
+    return '';
+  } else {
+    array.pop();
+    array.shift();
+    newArr = array.join('');
+    return newArr;
+  }
+}
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
 
