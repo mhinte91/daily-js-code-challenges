@@ -79,13 +79,7 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-function sumNumbers(arrayToAdd) {
-  let total = 0;
-  arrayToAdd.forEach(function(array) {
-    total += array;
-  });
-  return total;
-}
+
 
 /*-----------------------------------------------------------------
 Challenge: 04-addList
@@ -106,13 +100,7 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
-function addList() {
-  var sum = 0;
-  for (var i = 0; i < arguments.length; i++) {
-    sum += arguments[i];
-  }
-  return sum;
-}
+
 
 /*-----------------------------------------------------------------
 Challenge: 05-computeRemainder
@@ -134,13 +122,7 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-function computeRemainder(num1, num2) {
-  if (num2 > 0) {
-    return num1 % num2;
-  } else {
-    return Infinity;
-  }
-}
+
 
 /*-----------------------------------------------------------------
 Challenge: 06-range
@@ -168,16 +150,6 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
-function range(num1, num2) {
-  let arry = [];
-  if (num1 > num2) {
-    return 'First argument must be less than second';
-  }
-  for (let i = num1; i < num2; i++) {
-    arry.push(i);
-  }
-  return arry;
-}
 
 /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
@@ -197,13 +169,6 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
-function reverseUpcaseString(string) {
-  return string
-    .split('')
-    .reverse()
-    .join('')
-    .toUpperCase();
-}
 
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
@@ -222,9 +187,7 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
-function removeEnds(str) {
-  return str.length < 3 ? '' : str.substring(1, str.length - 1);
-}
+
 
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
@@ -245,16 +208,6 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
-function charCount(str) {
-  let obj = {};
-  let arry = str.split('');
-
-  arry.forEach(character => {
-    obj[character] ? obj[character]++ : (obj[character] = 1);
-  });
-
-  return obj;
-}
 
 /*-----------------------------------------------------------------
 Challenge: 10-formatWithPadding
@@ -278,14 +231,7 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
-function formatWithPadding(str, pad, amt) {
-  let str2 = str.toString();
-  if (str2.length >= amt) {
-    return str2;
-  }
-  let leftPadding = pad.repeat(amt - str2.length);
-  return `${leftPadding}${str2}`;
-}
+
 
 /*-----------------------------------------------------------------
 Challenge: 11-isPalindrome
@@ -307,13 +253,6 @@ isPalindrome('A nut for a jar of tuna'); //=> true
 isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
-function isPalindrome(string) {
-  splitString = string.split();
-  splitString.reverse();
-  splitString.join();
-  if (string === splitString || string === '') return true;
-  else return false;
-}
 
 /*-----------------------------------------------------------------
 Challenge: 12-hammingDistance
@@ -341,17 +280,6 @@ hammingDistance('abc', 'ab'); //=> NaN
 // 2) Loop through both strings and compare the same index at both strings and find the difference
 // 3) If there's a difference we increment a counter then return that counter once the loop ends
 
-function hammingDistance(str1, str2) {
-  let accumulator = 0;
-  if (str1.length !== str2.length) return NaN;
-  for (let i = 0; i < str1.length; i++) {
-    if (str1[i] !== str2[i]) {
-      accumulator++;
-    }
-  }
-  return accumulator;
-}
-
 /*-----------------------------------------------------------------
 Challenge: 13-mumble
 
@@ -372,17 +300,7 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-function mumble(str) {
-  // 1) find length of string, if === 1 return the string
-  // 2) split the string into an array
-  // 3) repeat each char by the index position + 1
-  return str
-    .split('')
-    .map((element, index) => {
-      return element.repeat(index + 1);
-    })
-    .join('-');
-}
+
 
 /*-----------------------------------------------------------------
 Challenge: 14-fromPairs
@@ -402,13 +320,6 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
-function fromPairs(arr) {
-  let obj = {};
-  for (let i = 0; i < arr.length; i++) {
-    obj[arr[i][0]] = arr[i][1];
-  }
-  return obj;
-}
 
 /*-----------------------------------------------------------------
 Challenge: 15-mergeObjects
@@ -431,19 +342,6 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
-function mergeObjects(target, ...objects) {
-  // 1) loop through array of objects
-  objects.forEach(function(object) {
-    // => {b: 22, d:44}
-    // 2) enumerate key/value pairs from each element object
-    for (key in object) {
-      // 3) assign key/value pairs from object elements to target object
-      target[key] = object[key]; // setter syntax
-    }
-  });
-  // 4) return target object
-  return target;
-}
 
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
@@ -491,14 +389,7 @@ function findHighestPriced(arr) {
   // 4) use an 'if' statement to make comparison then:
   //    a) if current index value > maxValue, maxValue = current value
   //    b) set the reference placeholder to current index object
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].price > maxValue) {
-      maxValue = arr[i].price;
-      result = arr[i];
-    }
-  }
-  return result;
-}
+
 
 /*-----------------------------------------------------------------
 Challenge: 17-mapArray
@@ -536,18 +427,7 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
   Output => [2, 4, 6]
 */
 
-function mapArray(array, callback) {
-  // 1) Make a new array to hold transformed values
-  const newArr = [];
-  // 2) for loop to iterate over array
-  for (let i = 0; i < array.length; i++) {
-    // 3) invoke the callback function passing in the curent element
-    // 4) push returned value of callback into new array
-    newArr.push(callback(array[i], i));
-    // 5) return the new array
-  }
-  return newArr;
-}
+
 
 /*-----------------------------------------------------------------
 Challenge: 18-reduceArray
