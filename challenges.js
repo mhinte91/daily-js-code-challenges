@@ -279,6 +279,20 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
+function formatWithPadding(num, padChar, padLength) {
+  stringNum = num.toString();
+  if (stringNum.length >= padLength) {
+    return stringNum;
+  } else {
+    padder = stringNum.split('');
+    for (i = 0; i < padLength - stringNum.length; i++) {
+      padder.unshift(padChar);
+    }
+    paddedString = padder.join('');
+    return paddedString;
+  }
+}
+
 /*-----------------------------------------------------------------
 Challenge: 11-isPalindrome
 
