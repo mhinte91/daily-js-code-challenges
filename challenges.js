@@ -314,6 +314,23 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
+function isPalindrome(string) {
+  splitString = string
+    .toLowerCase()
+    .split('')
+    .filter(char => char !== ' ');
+  joinForward = splitString.join('');
+  console.log(joinForward);
+  reverseString = splitString.reverse();
+  joinReverse = reverseString.join('');
+  console.log(joinReverse);
+  if (string.length <= 1) {
+    return true;
+  } else if (joinForward === joinReverse) {
+    return true;
+  } else return false;
+}
+
 /*-----------------------------------------------------------------
 Challenge: 12-hammingDistance
 
