@@ -320,10 +320,8 @@ function isPalindrome(string) {
     .split('')
     .filter(char => char !== ' ');
   joinForward = splitString.join('');
-  console.log(joinForward);
   reverseString = splitString.reverse();
   joinReverse = reverseString.join('');
-  console.log(joinReverse);
   if (string.length <= 1) {
     return true;
   } else if (joinForward === joinReverse) {
@@ -353,9 +351,18 @@ hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
 
-// [X] Determine if both strings are of the same length, if not return NaN
-// 2) Loop through both strings and compare the same index at both strings and find the difference
-// 3) If there's a difference we increment a counter then return that counter once the loop ends
+function hammingDistance(str1, str2) {
+  let counter = 0;
+  if (str1.length !== str2.length) {
+    return NaN;
+  } else {
+    for (i = 0; i < str1.length; i++) {
+      if (str1.charAt(i) !== str2.charAt(i)) counter += 1;
+    }
+  }
+  console.log(counter);
+  return counter;
+}
 
 /*-----------------------------------------------------------------
 Challenge: 13-mumble
