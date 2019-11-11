@@ -360,7 +360,6 @@ function hammingDistance(str1, str2) {
       if (str1.charAt(i) !== str2.charAt(i)) counter += 1;
     }
   }
-  console.log(counter);
   return counter;
 }
 
@@ -383,6 +382,20 @@ mumble('121'); //=> '1-22-111'
 mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
+
+function mumble(string) {
+  stringArr = string.split('');
+  countArr = [];
+  stringArr.forEach((char, idx) => {
+    for (i = 0; i < idx + 1; i++) {
+      countArr.push(char);
+    }
+    countArr.push('-');
+  });
+  countArr.pop();
+  stringArr = countArr.join('');
+  return stringArr;
+}
 
 /*-----------------------------------------------------------------
 Challenge: 14-fromPairs
